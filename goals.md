@@ -28,6 +28,11 @@
   - `curl -X POST http://127.0.0.1:3456/v1/messages -H "x-api-key: test-secret-key" -d '{"model":"opencode,glm-5.1",...}'` ✅
   - `curl -X POST http://127.0.0.1:3456/v1/messages -H "x-api-key: test-secret-key" -d '{"model":"opencode,minimax-m2.7",...}'` ✅
   - `curl -X POST http://127.0.0.1:3456/v1/messages -H "x-api-key: test-secret-key" -d '{"model":"deepseek,deepseek-chat",...}'` ✅
+- **Documentation added to `docs/`:**
+  - `opencode-go-setup.md` - Complete setup guide for OpenCode-Go integration ✅
+  - `troubleshooting.md` - Common issues and solutions ✅
+  - `configuration-reference.md` - Complete config options reference ✅
+  - `command-reference.md` - All commands for terminal and Claude Code CLI ✅
 
 ### ⚠️ Known Issues
 - `${DEEPSEEK_API_KEY}` env var interpolation in config NOT working (compiled code issue)
