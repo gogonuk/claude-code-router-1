@@ -6,8 +6,15 @@ export class DeepseekTransformer implements Transformer {
 
   async transformRequestIn(request: UnifiedChatRequest): Promise<UnifiedChatRequest> {
     if (request.max_tokens && request.max_tokens > 8192) {
-      request.max_tokens = 8192; // DeepSeek has a max token limit of 8192
+      request.max_tokens = 8192;
     }
+
+    for (const msg of request.messages) {
+      if (msg.role === "assistant" && msg.thinking?.content && !msg.reasoning_content) {
+        msg.reasoning_content = msg.thinking.content;
+      }
+    }
+
     return request;
   }
 
